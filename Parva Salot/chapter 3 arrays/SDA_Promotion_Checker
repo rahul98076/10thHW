@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class SDA_Promotion_Checker
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int Nos = 40;
+        int[] rollNumbers = new int[Nos];
+        int[] englishMarks = new int[Nos];
+        int[] physicsMarks = new int[Nos];
+        int[] chemistryMarks = new int[Nos];
+        int[] mathsMarks = new int[Nos];
+        for (int i = 0; i < Nos; i++)
+        {
+            System.out.println("Enter details for student " + (i + 1) + ":");
+            System.out.print("Roll Number: ");
+            rollNumbers[i] = in.nextInt();
+            System.out.print("Marks in English: ");
+            englishMarks[i] = in.nextInt();
+            System.out.print("Marks in Physics: ");
+            physicsMarks[i] = in.nextInt();
+            System.out.print("Marks in Chemistry: ");
+            chemistryMarks[i] = in.nextInt();
+            System.out.print("Marks in Maths: ");
+            mathsMarks[i] = in.nextInt();
+            System.out.println();
+        }
+        System.out.println("Promotion Status:");
+        for (int i = 0; i < Nos; i++)
+        {
+            if (englishMarks[i] >= 35 && (physicsMarks[i] >= 35 || chemistryMarks[i] >= 35 || mathsMarks[i] >= 35))
+            {
+                System.out.println("Roll Number " + rollNumbers[i] + ": Promotion is Granted");
+            }
+            else
+            {
+                System.out.println("Roll Number " + rollNumbers[i] + ": Promotion is not Granted");
+            }
+        }
+    }
+}
